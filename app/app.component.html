@@ -1,0 +1,43 @@
+<div class="container">
+    <div>
+        <h3 class="muted">Batch Automation
+            <small>v0.0.1</small>
+        </h3>
+        <div class="navbar navbar-default navbar-inverse">
+            <ul class="nav navbar-nav">
+                <li routerLinkActive="active">
+                    <a href routerLink="/home"> <i class="glyphicon glyphicon-home"></i> Home </a>
+                </li>
+                <li class="dropdown" dropdown (toggle)="toggled($event)" routerLinkActive="active">
+                    <a href class="dropdown-toggle" dropdownToggle><i class="glyphicon glyphicon-credit-card"></i> Batch <b
+                            class="caret"></b></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href routerLink="/batchMonitor"><i class="fa fa-bar-chart"></i> Monitoring </a></li>
+                    </ul>
+
+                </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right" style="margin-right:10px">
+                <li ng-show="true">
+                    <a>
+                        <i class="glyphicon glyphicon-user"></i>
+                        <b>Sankar</b></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="container">
+<router-outlet></router-outlet></div>
+<div class="container">
+    <footer class="navbar-default footer">
+            <div class="footer-inner">
+                <p>
+                    &copy; 2016 United Health Group.
+                    <br/>
+                    This utility is based on ng2, Bootstrap, Font Awesome and Spring MVC.
+                </p>
+            </div>
+
+    </footer>
+</div>
