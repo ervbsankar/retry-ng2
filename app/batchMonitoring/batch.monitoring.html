@@ -1,0 +1,24 @@
+<div class="well">
+    <form class="form-inline">
+    <label style="float:left;">Functional Area: </label> &nbsp;
+    <select class="form-control" [(ngModel)]="selectedFuncArea" (ngModelChange)="getFuncArea($event)" name="funcArea">
+        <option *ngFor="let funcArea of funcAreas">{{funcArea}}</option>
+    </select>
+        &nbsp;&nbsp;
+    <button class="btn btn-primary right"
+            (click)="repeatTest()">
+        <i class="fa fa-play"></i> Start
+    </button>
+    </form>
+</div>
+<br/>
+<div class="jumbotron" *ngIf="result">
+
+    {{result?.userName}}
+
+</div>
+
+<div [ngSwitch]="selectedFuncArea">
+    <div *ngSwitchCase="'MMIS Notices'"> <mmis-notices [master]="selectedFuncArea">Loading MMIS Notices...</mmis-notices></div>
+     <div *ngSwitchCase="'Dell Notices'"> Dell Notices</div>
+</div>

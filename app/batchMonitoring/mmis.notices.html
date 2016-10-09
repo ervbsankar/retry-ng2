@@ -1,0 +1,21 @@
+<pre>{{funcArea}}</pre>
+<br/>
+<table id="mmisNotices" class="table table-bordered" cellspacing="0" width="100%">
+    <thead>
+    <tr>
+        <th>Job#</th>
+        <th>Database Id#</th>
+        <th>Status</th>
+        <th>Records</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let mmis of mmisJobs">
+        <td scope="row">{{mmis?.job}}</td>
+        <td>{{mmis?.database}}</td>
+        <td></td>
+        <td>{{date | date:'MM-DDD-yy'}}</td>
+
+    </tr>
+    </tbody>
+</table>
