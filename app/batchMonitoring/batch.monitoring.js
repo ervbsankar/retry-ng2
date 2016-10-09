@@ -14,10 +14,6 @@ let BatchMonitorComponent = class BatchMonitorComponent {
     constructor(loginService) {
         this.loginService = loginService;
         this.funcAreas = ['MMIS Notices', 'Dell Notices', 'MMIS trans'];
-<<<<<<< HEAD
-        this.x = 0;
-=======
->>>>>>> c299d0fe1787500982cded4b2549acb8a35212bc
     }
     ngOnInit() {
         this.runMethod();
@@ -42,7 +38,6 @@ let BatchMonitorComponent = class BatchMonitorComponent {
     getFuncArea(funcArea) {
         console.log(funcArea);
     }
-<<<<<<< HEAD
     repeatTest() {
         this.loginService.repeatTest().
             takeWhile(c => c.status == "IN_PROGRESS");
@@ -51,8 +46,6 @@ let BatchMonitorComponent = class BatchMonitorComponent {
             console.log(x);
         });
     }
-=======
->>>>>>> c299d0fe1787500982cded4b2549acb8a35212bc
 };
 BatchMonitorComponent = __decorate([
     core_1.Component({

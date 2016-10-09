@@ -11,11 +11,10 @@ import "rxjs/add/operator/catch";
 @Injectable()
 export class LoginService {
 
-<<<<<<< HEAD
+
     arrayList = [{id: 1, status: "COMPLETED"},{id: 2, status:"COMPLETED"}];
 
-=======
->>>>>>> c299d0fe1787500982cded4b2549acb8a35212bc
+
     constructor(private _http: Http){
     }
 
@@ -47,7 +46,6 @@ export class LoginService {
         ;
     }
 
-<<<<<<< HEAD
 
     repeatTest()  {
         return Observable.from(this.arrayList)
@@ -55,6 +53,4 @@ export class LoginService {
             ;
     }
 
-=======
->>>>>>> c299d0fe1787500982cded4b2549acb8a35212bc
 }

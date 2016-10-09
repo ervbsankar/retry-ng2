@@ -9,11 +9,7 @@ export class BatchMonitorComponent implements OnInit {
 
     funcAreas=['MMIS Notices','Dell Notices','MMIS trans'];
 
-<<<<<<< HEAD
-    x = 0;
 
-=======
->>>>>>> c299d0fe1787500982cded4b2549acb8a35212bc
     ngOnInit(): void {
         this.runMethod();
     }
@@ -48,7 +44,6 @@ export class BatchMonitorComponent implements OnInit {
         console.log(funcArea);
 
     }
-<<<<<<< HEAD
 
     repeatTest(){
         this.loginService.repeatTest().
@@ -58,6 +53,4 @@ export class BatchMonitorComponent implements OnInit {
             console.log(x);
         });
     }
-=======
->>>>>>> c299d0fe1787500982cded4b2549acb8a35212bc
 }

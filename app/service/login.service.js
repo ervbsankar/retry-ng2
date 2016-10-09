@@ -19,10 +19,7 @@ require("rxjs/add/operator/catch");
 let LoginService = class LoginService {
     constructor(_http) {
         this._http = _http;
-<<<<<<< HEAD
         this.arrayList = [{ id: 1, status: "COMPLETED" }, { id: 2, status: "COMPLETED" }];
-=======
->>>>>>> c299d0fe1787500982cded4b2549acb8a35212bc
         this.loginUrl = "http://localhost:8080/batchMonitor/rest/sample/show";
     }
     getLogin() {
@@ -46,12 +43,9 @@ let LoginService = class LoginService {
             }, 1000);
         });
     }
-<<<<<<< HEAD
     repeatTest() {
         return Rx_1.Observable.from(this.arrayList);
     }
-=======
->>>>>>> c299d0fe1787500982cded4b2549acb8a35212bc
 };
 LoginService = __decorate([
     core_1.Injectable(), 
