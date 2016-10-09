@@ -13,11 +13,14 @@ export class MassComponent {
         {"job": "20", "database": "--"}];
 
     @Input('master') funcArea: String;
+<<<<<<< HEAD
     private date;
 
     constructor(){
         this.date = new Date();
     }
+=======
+>>>>>>> c299d0fe1787500982cded4b2549acb8a35212bc
 
 
 }

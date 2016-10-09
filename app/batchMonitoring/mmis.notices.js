@@ -16,7 +16,10 @@ let MassComponent = class MassComponent {
             { "job": "17", "database": "15" },
             { "job": "18", "database": "16" },
             { "job": "20", "database": "--" }];
+<<<<<<< HEAD
         this.date = new Date();
+=======
+>>>>>>> c299d0fe1787500982cded4b2549acb8a35212bc
     }
 };
 __decorate([
