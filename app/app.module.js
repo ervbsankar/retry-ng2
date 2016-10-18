@@ -18,12 +18,14 @@ const batch_monitoring_1 = require("./batchMonitoring/batch.monitoring");
 const login_service_1 = require("./service/login.service");
 const http_1 = require("@angular/http");
 const mmis_notices_1 = require("./batchMonitoring/mmis.notices");
+const jobstatus_pipe_1 = require("./pipe/jobstatus.pipe");
+const workflow_1 = require("./workflow/workflow");
 let AppModule = class AppModule {
 };
 AppModule = __decorate([
     core_1.NgModule({
-        imports: [platform_browser_1.BrowserModule, ng2_bootstrap_1.Ng2BootstrapModule, ng2_bootstrap_1.ButtonsModule, ng2_bootstrap_1.AlertModule, app_routes_1.routing, http_1.HttpModule],
-        declarations: [app_component_1.AppComponent, app_home_component_1.HomeComponent, batch_monitoring_1.BatchMonitorComponent, mmis_notices_1.MassComponent],
+        imports: [platform_browser_1.BrowserModule, ng2_bootstrap_1.Ng2BootstrapModule, ng2_bootstrap_1.ButtonsModule, ng2_bootstrap_1.AlertModule, app_routes_1.routing, http_1.HttpModule, ng2_bootstrap_1.TooltipModule],
+        declarations: [app_component_1.AppComponent, app_home_component_1.HomeComponent, batch_monitoring_1.BatchMonitorComponent, mmis_notices_1.MassComponent, jobstatus_pipe_1.JobStatusPipe, workflow_1.WorkFlowComponent],
         bootstrap: [app_component_1.AppComponent],
         providers: [login_service_1.LoginService]
     }), 

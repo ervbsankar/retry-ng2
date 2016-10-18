@@ -2,16 +2,23 @@ import {NgModule} from "@angular/core";
 import {BrowserModule} from "@angular/platform-browser";
 import {AppComponent} from "./app.component";
 import {HomeComponent} from "./home/app.home.component";
-import {ButtonsModule, AlertModule, AlertComponent, Ng2BootstrapModule, CollapseDirective} from "ng2-bootstrap";
+import {
+    ButtonsModule, AlertModule, Ng2BootstrapModule,
+    TooltipModule
+} from "ng2-bootstrap";
 import {routing} from "./app.routes";
 import {BatchMonitorComponent} from "./batchMonitoring/batch.monitoring";
 import {LoginService} from "./service/login.service";
 import {HttpModule} from "@angular/http";
 import {MassComponent} from "./batchMonitoring/mmis.notices";
+import {JobStatusPipe} from "./pipe/jobstatus.pipe";
+import {WorkFlowComponent} from "./workflow/workflow";
+
+
 
 @NgModule({
-    imports : [ BrowserModule, Ng2BootstrapModule, ButtonsModule, AlertModule, routing, HttpModule ],
-    declarations: [ AppComponent, HomeComponent, BatchMonitorComponent, MassComponent ],
+    imports : [ BrowserModule, Ng2BootstrapModule, ButtonsModule, AlertModule, routing, HttpModule, TooltipModule ],
+    declarations: [ AppComponent, HomeComponent, BatchMonitorComponent, MassComponent, JobStatusPipe, WorkFlowComponent ],
     bootstrap : [AppComponent],
     providers: [LoginService]
 })

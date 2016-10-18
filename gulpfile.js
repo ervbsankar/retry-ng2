@@ -38,7 +38,8 @@ gulp.task("libs", function() {
         "ng2-bootstrap/**",
         "bootstrap/dist/**",
         "moment/moment.js",
-        "angular2-in-memory-web-api"
+        "angular2-in-memory-web-api/**",
+        "ng2-tooltip/**"
     ], {cwd: "node_modules/**"}) /* Glob required here. */
         .pipe(gulp.dest("build/lib"));
 });

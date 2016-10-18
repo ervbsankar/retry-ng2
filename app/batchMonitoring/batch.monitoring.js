@@ -10,21 +10,14 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 const core_1 = require("@angular/core");
 const login_service_1 = require("../service/login.service");
+const Rx_1 = require("rxjs/Rx");
 let BatchMonitorComponent = class BatchMonitorComponent {
     constructor(loginService) {
         this.loginService = loginService;
-        this.funcAreas = ['MMIS Notices', 'Dell Notices', 'MMIS trans'];
+        this.funcAreas = ['MMIS Notices', 'Dell Notices', 'MMIS Trans', 'Dell Trans'];
     }
     ngOnInit() {
         this.runMethod();
-    }
-    getLogin() {
-        this.loginService.getLogin().subscribe(res => {
-            this.result = res;
-            console.log(res);
-        }, err => {
-            console.log(err);
-        });
     }
     runMethod() {
         this.loginService.runTenSeconds().subscribe(value => console.log("received: " + value));
@@ -39,12 +32,20 @@ let BatchMonitorComponent = class BatchMonitorComponent {
         console.log(funcArea);
     }
     repeatTest() {
-        this.loginService.repeatTest().
-            takeWhile(c => c.status == "IN_PROGRESS");
-        this.loginService.repeatTest().subscribe(x => {
+        //.filter( c => c.status == "COMPLETED");
+        //observer.subscribeOn();
+        let i = 0;
+        let subscrip = this.loginService.repeatTest().subscribe(x => {
             console.log('repeat: ');
             console.log(x);
+            i++;
+            console.log(i);
+            if (i > 5) {
+                subscrip.unsubscribe();
+            }
         });
+        let dispose = Rx_1.Scheduler.async;
+        console.log(dispose.active);
     }
 };
 BatchMonitorComponent = __decorate([

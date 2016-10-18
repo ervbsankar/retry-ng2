@@ -1,0 +1,27 @@
+<form class="form-inline" xmlns="http://www.w3.org/1999/html">
+    <label style="float:left;">Row level: </label> &nbsp;
+    <select class="form-control" [(ngModel)]="jobRow" (ngModelChange)="getRow($event)" name="jobRow">
+        <option *ngFor="let row of rowValues">{{row}}</option>
+    </select>
+
+    <label>Column level: </label> &nbsp;
+    <select class="form-control" [(ngModel)]="colRow" (ngModelChange)="getCol($event)"  name="colRow">
+        <option *ngFor="let col of colValues">{{col}}</option>
+    </select>
+</form>
+
+<div *ngIf="workflowArr.length > 0">
+    <table id="workflow" class="table table-bordered" cellspacing="0" width="100%">
+        <thead>
+            <tr><th *ngFor="let col of workflowColumnArr">{{col}}</th>
+            </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let workflowRow of workflowArr">
+            <td><input type="checkbox" [(ngModel)]="workflowRow.selected"/></td>
+            <td>{{workflowRow.id}}</td>
+          <td>{{workflowRow.event}}</td>
+        </tr>
+        </tbody>
+    </table>
+</div>

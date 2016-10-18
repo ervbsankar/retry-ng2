@@ -1,5 +1,7 @@
 import {Component, OnInit} from "@angular/core";
 import {LoginService} from "../service/login.service";
+import {Observable, Scheduler} from "rxjs/Rx";
+
 @Component({
     selector: "product-list",
     templateUrl: "./app/batchMonitoring/batch.monitoring.html"
@@ -7,8 +9,7 @@ import {LoginService} from "../service/login.service";
 
 export class BatchMonitorComponent implements OnInit {
 
-    funcAreas=['MMIS Notices','Dell Notices','MMIS trans'];
-
+    funcAreas=['MMIS Notices','Dell Notices','MMIS Trans','Dell Trans'];
 
     ngOnInit(): void {
         this.runMethod();
@@ -17,16 +18,6 @@ export class BatchMonitorComponent implements OnInit {
     result: any;
 
     constructor(private loginService: LoginService) {
-    }
-
-    getLogin() {
-        this.loginService.getLogin().subscribe(res => {
-                this.result = res;
-            console.log(res);
-            },
-            err => {
-                console.log(err)
-            });
     }
 
     runMethod() {
@@ -46,11 +37,20 @@ export class BatchMonitorComponent implements OnInit {
     }
 
     repeatTest(){
-        this.loginService.repeatTest().
-        takeWhile(c => c.status == "IN_PROGRESS");
-        this.loginService.repeatTest().subscribe(x => {
-            console.log('repeat: ');
-            console.log(x);
-        });
+            //.filter( c => c.status == "COMPLETED");
+        //observer.subscribeOn();
+        let i = 0;
+         let subscrip = this.loginService.repeatTest().subscribe(x => {
+         console.log('repeat: ');
+         console.log(x);
+             i++;
+             console.log(i);
+             if(i > 5) {
+                 subscrip.unsubscribe();
+             }
+         });
+
+        let dispose = Scheduler.async;
+        console.log(dispose.active);
     }
 }

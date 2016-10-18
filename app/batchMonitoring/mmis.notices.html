@@ -1,29 +1,30 @@
-<<<<<<< HEAD
-<pre>{{funcArea}}</pre>
+<pre>{{funcArea}} : {{date | date:'dd-MMM-yy'}}</pre>
 <br/>
-=======
->>>>>>> c299d0fe1787500982cded4b2549acb8a35212bc
-<table id="mmisNotices" class="table table-bordered" cellspacing="0" width="100%">
+
+<table id="jobNotices" class="table table-bordered" cellspacing="0" width="100%" >
     <thead>
     <tr>
         <th>Job#</th>
-        <th>Database Id#</th>
+        <th>DB#</th>
         <th>Status</th>
-        <th>Records</th>
     </tr>
     </thead>
     <tbody>
-    <tr *ngFor="let mmis of mmisJobs">
-        <td scope="row">{{mmis?.job}}</td>
-        <td>{{mmis?.database}}</td>
-<<<<<<< HEAD
-        <td></td>
-        <td>{{date | date:'MM-DDD-yy'}}</td>
-=======
-        <td>{{funcArea}}</td>
-        <td>{{date | date:'MM dd yy'}}</td>
->>>>>>> c299d0fe1787500982cded4b2549acb8a35212bc
-
+    <tr *ngFor="let job of jobList">
+        <td scope="row">{{job?.job}}</td>
+        <td>{{job?.database}}</td>
+        <td>
+            <div class="form-inline" style="margin-right: 0px;margin-left: 0px">
+                <span *ngFor="let res of result">
+                    <span *ngIf="res?.jobTypeCode == job.database" class="fa-stack fa-sm" tooltip="{{res.endTime | date:'HH:mm'}}" tooltip-append-to-body="true">
+                       <i class="fa fa-square-o fa-stack-1x"></i>
+                        <i class="fa fa-inverse fa-stack-1x"
+                             [ngClass]="{'background-green': (res?.currentStatus == 'COMPLETED'),'background-yellow': (res?.currentStatus == 'IN_PROGRESS')}">
+                             {{res?.currentStatus | jobStatusTransform}}</i>
+                    </span>
+                </span>
+            </div>
+        </td>
     </tr>
     </tbody>
 </table>

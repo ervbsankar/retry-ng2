@@ -6,23 +6,15 @@
     </select>
         &nbsp;&nbsp;
     <button class="btn btn-primary right"
-<<<<<<< HEAD
             (click)="repeatTest()">
-=======
-            (click)="getLogin()">
->>>>>>> c299d0fe1787500982cded4b2549acb8a35212bc
         <i class="fa fa-play"></i> Start
     </button>
     </form>
 </div>
 <br/>
-<div class="jumbotron" *ngIf="result">
-
-    {{result?.userName}}
-
-</div>
-
 <div [ngSwitch]="selectedFuncArea">
     <div *ngSwitchCase="'MMIS Notices'"> <mmis-notices [master]="selectedFuncArea">Loading MMIS Notices...</mmis-notices></div>
-     <div *ngSwitchCase="'Dell Notices'"> Dell Notices</div>
+     <div *ngSwitchCase="'Dell Notices'"> <mmis-notices [master]="selectedFuncArea">Loading Dell Notices...</mmis-notices></div>
+     <div *ngSwitchCase="'MMIS Trans'"> <mmis-notices [master]="selectedFuncArea">Loading MMIS Transaction...</mmis-notices></div>
+     <div *ngSwitchCase="'Dell Trans'"> <mmis-notices [master]="selectedFuncArea">Loading Dell Transaction...</mmis-notices></div>
 </div>

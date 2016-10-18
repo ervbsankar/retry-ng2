@@ -9,14 +9,31 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 const core_1 = require("@angular/core");
+const common_1 = require("@angular/common");
+const login_service_1 = require("../service/login.service");
 let MassComponent = class MassComponent {
-    constructor() {
-        this.mmisJobs = [{ "job": "13", "database": "11" },
-            { "job": "19", "database": "19" },
-            { "job": "17", "database": "15" },
-            { "job": "18", "database": "16" },
-            { "job": "20", "database": "--" }];
-        this.date = new Date();
+    constructor(loginService) {
+        this.loginService = loginService;
+        this.result = [];
+        this.jobList = [];
+        this.date = new common_1.DatePipe('en-US').transform(new Date, 'dd-MMM-yy');
+    }
+    ngOnInit() {
+        localStorage.setItem("funcArea", this.funcArea);
+        this.jobList = this.loginService.getJobList(this.funcArea);
+        this.jobList.forEach((job) => {
+            if (!(job.database == null))
+                this.getJobStatus(job.database);
+        });
+    }
+    getJobStatus(job) {
+        this.loginService.getJobStatus(job, this.date).subscribe(res => {
+            this.result1 = res;
+        }, err => {
+            console.log(err);
+        }, () => {
+            this.result.push.apply(this.result, this.result1);
+        });
     }
 };
 __decorate([
@@ -26,9 +43,10 @@ __decorate([
 MassComponent = __decorate([
     core_1.Component({
         selector: "mmis-notices",
-        templateUrl: "./app/batchMonitoring/mmis.notices.html"
+        templateUrl: "./app/batchMonitoring/mmis.notices.html",
+        styleUrls: ["./app/batchMonitoring/batch.monitoring.css"]
     }), 
-    __metadata('design:paramtypes', [])
+    __metadata('design:paramtypes', [login_service_1.LoginService])
 ], MassComponent);
 exports.MassComponent = MassComponent;
 

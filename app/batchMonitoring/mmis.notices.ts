@@ -1,21 +1,42 @@
-import {Component, Input} from "@angular/core";
+import {Component, Input, OnInit} from "@angular/core";
+import {DatePipe} from "@angular/common";
+import {LoginService} from "../service/login.service";
 @Component({
     selector: "mmis-notices",
-    templateUrl: "./app/batchMonitoring/mmis.notices.html"
+    templateUrl: "./app/batchMonitoring/mmis.notices.html",
+    styleUrls: ["./app/batchMonitoring/batch.monitoring.css"]
 })
 
-export class MassComponent {
+export class MassComponent implements OnInit {
+    ngOnInit(): void {
+        localStorage.setItem("funcArea",this.funcArea);
+        this.jobList = this.loginService.getJobList(this.funcArea);
+        this.jobList.forEach((job) => {
+            if(!(job.database == null)) this.getJobStatus(job.database);
+        });
+    }
 
-    mmisJobs=[{"job": "13", "database": "11"},
-        {"job": "19", "database": "19"},
-        {"job": "17", "database": "15"},
-        {"job": "18", "database": "16"},
-        {"job": "20", "database": "--"}];
+    @Input('master') funcArea: string;
+    private date: string;
+    private result: Array<Object> = [];
+    private result1: Array<Object>;
+    private jobList=[];
 
-    @Input('master') funcArea: String;
-    private date;
 
-    constructor(){
-        this.date = new Date();
+    constructor(private loginService: LoginService){
+        this.date = new DatePipe('en-US').transform(new Date,'dd-MMM-yy');
+    }
+
+    getJobStatus(job: string): void {
+        this.loginService.getJobStatus(job,this.date).subscribe(res => {
+                this.result1 = res;
+            },
+            err => {
+                console.log(err)
+            },
+            () => {
+                this.result.push.apply(this.result,this.result1);
+            }
+        );
     }
 }
