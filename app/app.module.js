@@ -11,23 +11,24 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 const core_1 = require("@angular/core");
 const platform_browser_1 = require("@angular/platform-browser");
 const app_component_1 = require("./app.component");
-const app_home_component_1 = require("./home/app.home.component");
+const app_home_component_1 = require("./home/app-home.component");
 const ng2_bootstrap_1 = require("ng2-bootstrap");
 const app_routes_1 = require("./app.routes");
-const batch_monitoring_1 = require("./batchMonitoring/batch.monitoring");
-const login_service_1 = require("./service/login.service");
+const batch_monitor_component_1 = require("./batchMonitoring/batch-monitor.component");
+const rest_api_service_1 = require("./service/rest-api.service");
 const http_1 = require("@angular/http");
-const mmis_notices_1 = require("./batchMonitoring/mmis.notices");
-const jobstatus_pipe_1 = require("./pipe/jobstatus.pipe");
-const workflow_1 = require("./workflow/workflow");
+const func_area_component_1 = require("./batchMonitoring/func-area.component");
+const short_status_pipe_1 = require("./pipe/short-status.pipe");
+const work_flow_component_1 = require("./workflow/work-flow.component");
 let AppModule = class AppModule {
 };
 AppModule = __decorate([
     core_1.NgModule({
         imports: [platform_browser_1.BrowserModule, ng2_bootstrap_1.Ng2BootstrapModule, ng2_bootstrap_1.ButtonsModule, ng2_bootstrap_1.AlertModule, app_routes_1.routing, http_1.HttpModule, ng2_bootstrap_1.TooltipModule],
-        declarations: [app_component_1.AppComponent, app_home_component_1.HomeComponent, batch_monitoring_1.BatchMonitorComponent, mmis_notices_1.MassComponent, jobstatus_pipe_1.JobStatusPipe, workflow_1.WorkFlowComponent],
+        declarations: [app_component_1.AppComponent, app_home_component_1.HomeComponent, batch_monitor_component_1.BatchMonitorComponent, func_area_component_1.FuncAreaComponent, short_status_pipe_1.ShortStatusPipe, work_flow_component_1.WorkFlowComponent],
         bootstrap: [app_component_1.AppComponent],
-        providers: [login_service_1.LoginService]
+        providers: [rest_api_service_1.RestApiService],
+        exports: [short_status_pipe_1.ShortStatusPipe]
     }), 
     __metadata('design:paramtypes', [])
 ], AppModule);

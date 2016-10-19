@@ -2,7 +2,7 @@
 import {Component} from "@angular/core";
 @Component({
     selector: "workflow",
-    templateUrl: "./app/workflow/workflow.html"
+    templateUrl: "work-flow.html"
 })
 
 export class WorkFlowComponent {

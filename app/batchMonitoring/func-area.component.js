@@ -10,8 +10,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 const core_1 = require("@angular/core");
 const common_1 = require("@angular/common");
-const login_service_1 = require("../service/login.service");
-let MassComponent = class MassComponent {
+const rest_api_service_1 = require("../service/rest-api.service");
+let FuncAreaComponent = class FuncAreaComponent {
     constructor(loginService) {
         this.loginService = loginService;
         this.result = [];
@@ -39,15 +39,15 @@ let MassComponent = class MassComponent {
 __decorate([
     core_1.Input('master'), 
     __metadata('design:type', String)
-], MassComponent.prototype, "funcArea", void 0);
-MassComponent = __decorate([
+], FuncAreaComponent.prototype, "funcArea", void 0);
+FuncAreaComponent = __decorate([
     core_1.Component({
         selector: "mmis-notices",
-        templateUrl: "./app/batchMonitoring/mmis.notices.html",
-        styleUrls: ["./app/batchMonitoring/batch.monitoring.css"]
+        templateUrl: "./app/batchMonitoring/func-area.html",
+        styleUrls: ["batch-monitor.css"]
     }), 
-    __metadata('design:paramtypes', [login_service_1.LoginService])
-], MassComponent);
-exports.MassComponent = MassComponent;
+    __metadata('design:paramtypes', [rest_api_service_1.RestApiService])
+], FuncAreaComponent);
+exports.FuncAreaComponent = FuncAreaComponent;
 
-//# sourceMappingURL=mmis.notices.js.map
+//# sourceMappingURL=func-area.component.js.map

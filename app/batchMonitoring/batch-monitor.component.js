@@ -9,7 +9,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 const core_1 = require("@angular/core");
-const login_service_1 = require("../service/login.service");
+const rest_api_service_1 = require("../service/rest-api.service");
 const Rx_1 = require("rxjs/Rx");
 let BatchMonitorComponent = class BatchMonitorComponent {
     constructor(loginService) {
@@ -51,10 +51,10 @@ let BatchMonitorComponent = class BatchMonitorComponent {
 BatchMonitorComponent = __decorate([
     core_1.Component({
         selector: "product-list",
-        templateUrl: "./app/batchMonitoring/batch.monitoring.html"
+        templateUrl: "batch-monitor.html"
     }), 
-    __metadata('design:paramtypes', [login_service_1.LoginService])
+    __metadata('design:paramtypes', [rest_api_service_1.RestApiService])
 ], BatchMonitorComponent);
 exports.BatchMonitorComponent = BatchMonitorComponent;
 
-//# sourceMappingURL=batch.monitoring.js.map
+//# sourceMappingURL=batch-monitor.component.js.map

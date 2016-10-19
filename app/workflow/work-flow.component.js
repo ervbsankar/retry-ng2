@@ -50,10 +50,10 @@ let WorkFlowComponent = class WorkFlowComponent {
 WorkFlowComponent = __decorate([
     core_1.Component({
         selector: "workflow",
-        templateUrl: "./app/workflow/workflow.html"
+        templateUrl: "work-flow.html"
     }), 
     __metadata('design:paramtypes', [])
 ], WorkFlowComponent);
 exports.WorkFlowComponent = WorkFlowComponent;
 
-//# sourceMappingURL=workflow.js.map
+//# sourceMappingURL=work-flow.component.js.map

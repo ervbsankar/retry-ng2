@@ -1,8 +1,8 @@
 import {Routes, RouterModule} from "@angular/router";
 import {ModuleWithProviders} from "@angular/core";
-import {HomeComponent} from "./home/app.home.component";
-import {BatchMonitorComponent} from "./batchMonitoring/batch.monitoring";
-import {WorkFlowComponent} from "./workflow/workflow";
+import {HomeComponent} from "./home/app-home.component";
+import {BatchMonitorComponent} from "./batchMonitoring/batch-monitor.component";
+import {WorkFlowComponent} from "./workflow/work-flow.component";
 
 
 // Route configurations

@@ -3,4 +3,4 @@ class userInfo {
 }
 exports.userInfo = userInfo;
 
-//# sourceMappingURL=userInfo.js.map
+//# sourceMappingURL=user-info.model.js.map

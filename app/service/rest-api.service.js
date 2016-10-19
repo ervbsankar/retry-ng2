@@ -16,7 +16,7 @@ const http_1 = require("@angular/http");
 const Rx_1 = require("rxjs/Rx");
 require("rxjs/add/operator/map");
 require("rxjs/add/operator/catch");
-let LoginService = class LoginService {
+let RestApiService = class RestApiService {
     constructor(_http) {
         this._http = _http;
         this.arrayList = [{ id: 1, status: "IN_PROGRESS" }, { id: 2, status: "COMPLETED" }];
@@ -77,10 +77,10 @@ let LoginService = class LoginService {
         //Observable.from(this.arrayList);
     }
 };
-LoginService = __decorate([
+RestApiService = __decorate([
     core_1.Injectable(), 
     __metadata('design:paramtypes', [http_1.Http])
-], LoginService);
-exports.LoginService = LoginService;
+], RestApiService);
+exports.RestApiService = RestApiService;
 
-//# sourceMappingURL=login.service.js.map
+//# sourceMappingURL=rest-api.service.js.map
