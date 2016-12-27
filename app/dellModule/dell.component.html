@@ -1,0 +1,19 @@
+<br/>
+
+<div class="input-group">
+    <md-input-container dividerColor="primary" style="width: 150px">
+        <input type="text" md-input placeholder="Subscriber Id" [ngModel]="refId">
+    </md-input-container>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <button md-mini-fab (click)="toggleEndDatePicker()"><i class="glyphicon glyphicon-calendar"></i></button>
+    <md-input-container dividerColor="warn" style="width: 150px">
+    <input type="text" md-input [ngModel]="end_dt | date:'dd-MM-yyyy'" (focus)="toggleEndDatePicker()" placeholder="Enter Date">
+        <div *ngIf="showEndDatePicker" class="datepicker">
+            <datepicker [(ngModel)]="end_dt" [minDate]="minDate" [showWeeks]="false"></datepicker>
+        </div>
+    </md-input-container>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <button md-raised-button color="primary" (click)="getL2errorList(refId,date);">
+        <i class="glyphicon glyphicon-search"></i> Search
+    </button>
+</div>

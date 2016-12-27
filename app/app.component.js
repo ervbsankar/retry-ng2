@@ -24,8 +24,8 @@ AppComponent = __decorate([
     border-top: 1px solid #DDD;
 }
 `]
-    }), 
-    __metadata('design:paramtypes', [])
+    }),
+    __metadata("design:paramtypes", [])
 ], AppComponent);
 exports.AppComponent = AppComponent;
 

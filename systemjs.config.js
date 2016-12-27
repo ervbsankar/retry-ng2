@@ -22,11 +22,12 @@
             '@angular/http': 'lib/@angular/http/bundles/http.umd.js',
             '@angular/router': 'lib/@angular/router/bundles/router.umd.js',
             '@angular/forms': 'lib/@angular/forms/bundles/forms.umd.js',
+            '@angular/material': 'lib/@angular/material/bundles/material.umd.js',
             // other libraries
             'rxjs':                       'lib/rxjs',
             'angular2-in-memory-web-api': 'lib/angular2-in-memory-web-api',
             'moment': 'lib/moment/moment.js',
-            'ng2-bootstrap': 'lib/ng2-bootstrap/ng2-bootstrap.js',
+            'ng2-bootstrap': 'lib/ng2-bootstrap/bundles/ng2-bootstrap.umd.js',
             'ng2-tooltip': 'lib/ng2-tooltip'
         },
         // packages tells the System loader how to load when no filename and/or no extension
@@ -45,7 +46,8 @@
             'lib/ng2-bootstrap' : {
                 defaultExtension: 'js'
             },
-            "lib/ng2-tooltip": { "main": "index.js", "defaultExtension": "js" }
+            'lib/ng2-tooltip': { main: './index.js', defaultExtension: 'js' }
+            /*,'lib/@angular/material': { main: './index.js', defaultExtension: 'js'}*/
         }
     });
 })(this);

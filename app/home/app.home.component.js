@@ -14,15 +14,22 @@ let HomeComponent = class HomeComponent {
         this.date = new Date();
         this.products = ["paste", "brush"];
     }
+    onOut(e) {
+        console.log('Emitting event');
+        console.log(e);
+        this.childData = e.Sankar;
+    }
 };
 HomeComponent = __decorate([
     core_1.Component({
         selector: "home",
         template: ` Home Page
- 
+     <div myFirst [store]="'Soumya'" (out)="onOut($event)">Toggle</div>
+    {{childData}}
+    <button class="btn btn-primary right" (click)="onOut($event)" >Click Me!</button>
 `
-    }), 
-    __metadata('design:paramtypes', [])
+    }),
+    __metadata("design:paramtypes", [])
 ], HomeComponent);
 exports.HomeComponent = HomeComponent;
 

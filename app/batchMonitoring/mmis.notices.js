@@ -27,8 +27,16 @@ let MassComponent = class MassComponent {
         });
     }
     getJobStatus(job) {
+        console.log(this.date);
         this.loginService.getJobStatus(job, this.date).subscribe(res => {
             this.result1 = res;
+            this.result1.forEach(function (obj) {
+                var date = new Date(obj['endTime']);
+                console.log();
+                date.setMinutes(date.getMinutes() + date.getTimezoneOffset());
+                console.log(date.toString());
+                obj['endTime'] = date.toString();
+            });
         }, err => {
             console.log(err);
         }, () => {
@@ -37,16 +45,16 @@ let MassComponent = class MassComponent {
     }
 };
 __decorate([
-    core_1.Input('master'), 
-    __metadata('design:type', String)
+    core_1.Input('master'),
+    __metadata("design:type", String)
 ], MassComponent.prototype, "funcArea", void 0);
 MassComponent = __decorate([
     core_1.Component({
         selector: "mmis-notices",
         templateUrl: "./app/batchMonitoring/mmis.notices.html",
         styleUrls: ["./app/batchMonitoring/batch.monitoring.css"]
-    }), 
-    __metadata('design:paramtypes', [login_service_1.LoginService])
+    }),
+    __metadata("design:paramtypes", [login_service_1.LoginService])
 ], MassComponent);
 exports.MassComponent = MassComponent;
 

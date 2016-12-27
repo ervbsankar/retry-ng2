@@ -16,7 +16,7 @@
         <td>
             <div class="form-inline" style="margin-right: 0px;margin-left: 0px">
                 <span *ngFor="let res of result">
-                    <span *ngIf="res?.jobTypeCode == job.database" class="fa-stack fa-sm" tooltip="{{res.endTime | date:'HH:mm'}}" tooltip-append-to-body="true">
+                    <span *ngIf="res?.jobTypeCode == job.database" class="fa-stack fa-sm" tooltip="{{res.endTime | date:'shortTime'}}" tooltip-append-to-body="true">
                        <i class="fa fa-square-o fa-stack-1x"></i>
                         <i class="fa fa-inverse fa-stack-1x"
                              [ngClass]="{'background-green': (res?.currentStatus == 'COMPLETED'),'background-yellow': (res?.currentStatus == 'IN_PROGRESS')}">

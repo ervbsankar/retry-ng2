@@ -22,8 +22,8 @@ let JobStatusPipe = class JobStatusPipe {
     }
 };
 JobStatusPipe = __decorate([
-    core_1.Pipe({ name: "jobStatusTransform" }), 
-    __metadata('design:paramtypes', [])
+    core_1.Pipe({ name: "jobStatusTransform" }),
+    __metadata("design:paramtypes", [])
 ], JobStatusPipe);
 exports.JobStatusPipe = JobStatusPipe;
 

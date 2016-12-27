@@ -12,7 +12,7 @@ import "rxjs/add/operator/catch";
 export class LoginService {
 
     arrayList = [{id: 1, status: "IN_PROGRESS"}, {id: 2, status: "COMPLETED"}];
-    mmisNoticeJobs=[{"job": "13", "database": "11"},
+    mmisNoticeJobs=[{"job": "14", "database": "14"},{"job": "13", "database": "11"},
         {"job": "19", "database": "19"},
         {"job": "17", "database": "15"},
         {"job": "18", "database": "16"},
@@ -30,7 +30,7 @@ export class LoginService {
     constructor(private _http: Http) {
     }
 
-    private loginUrl = "http://localhost:8080/batchMonitor/rest/API";
+    private loginUrl = "http://localhost:8090/batchMonitor/rest/API";
 
     getJobStatus(jobType: string, createdDate: string): Observable<Array<Object>> {
         var restUrl = this.loginUrl + "/job/" + jobType + "/" + createdDate;

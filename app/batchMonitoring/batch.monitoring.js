@@ -52,8 +52,8 @@ BatchMonitorComponent = __decorate([
     core_1.Component({
         selector: "product-list",
         templateUrl: "./app/batchMonitoring/batch.monitoring.html"
-    }), 
-    __metadata('design:paramtypes', [login_service_1.LoginService])
+    }),
+    __metadata("design:paramtypes", [login_service_1.LoginService])
 ], BatchMonitorComponent);
 exports.BatchMonitorComponent = BatchMonitorComponent;
 

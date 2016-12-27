@@ -51,8 +51,8 @@ WorkFlowComponent = __decorate([
     core_1.Component({
         selector: "workflow",
         templateUrl: "./app/workflow/workflow.html"
-    }), 
-    __metadata('design:paramtypes', [])
+    }),
+    __metadata("design:paramtypes", [])
 ], WorkFlowComponent);
 exports.WorkFlowComponent = WorkFlowComponent;
 

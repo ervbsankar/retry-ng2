@@ -20,7 +20,7 @@ let LoginService = class LoginService {
     constructor(_http) {
         this._http = _http;
         this.arrayList = [{ id: 1, status: "IN_PROGRESS" }, { id: 2, status: "COMPLETED" }];
-        this.mmisNoticeJobs = [{ "job": "13", "database": "11" },
+        this.mmisNoticeJobs = [{ "job": "14", "database": "14" }, { "job": "13", "database": "11" },
             { "job": "19", "database": "19" },
             { "job": "17", "database": "15" },
             { "job": "18", "database": "16" },
@@ -31,7 +31,7 @@ let LoginService = class LoginService {
             { "job": "10", "database": "9" }];
         this.dellTransJobs = [{ "job": "3", "database": "2" },
             { "job": "8", "database": "7" }];
-        this.loginUrl = "http://localhost:8080/batchMonitor/rest/API";
+        this.loginUrl = "http://localhost:8090/batchMonitor/rest/API";
     }
     getJobStatus(jobType, createdDate) {
         var restUrl = this.loginUrl + "/job/" + jobType + "/" + createdDate;
@@ -78,8 +78,8 @@ let LoginService = class LoginService {
     }
 };
 LoginService = __decorate([
-    core_1.Injectable(), 
-    __metadata('design:paramtypes', [http_1.Http])
+    core_1.Injectable(),
+    __metadata("design:paramtypes", [http_1.Http])
 ], LoginService);
 exports.LoginService = LoginService;
 
