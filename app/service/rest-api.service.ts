@@ -9,7 +9,7 @@ import "rxjs/add/operator/map";
 import "rxjs/add/operator/catch";
 
 @Injectable()
-export class LoginService {
+export class RestApiService {
 
     arrayList = [{id: 1, status: "IN_PROGRESS"}, {id: 2, status: "COMPLETED"}];
     mmisNoticeJobs=[{"job": "14", "database": "14"},{"job": "13", "database": "11"},

@@ -11,7 +11,7 @@ export class HomeComponent {
     date: Date = new Date();
     products: String[];
     public childData: any;
-    public columns:Array<any> = [
+    public columns: Array<any> = [
         {title: 'Name', name: 'name', filtering: {filterString: '', placeholder: 'Filter by name'}},
         {
             title: 'Position',
@@ -26,16 +26,30 @@ export class HomeComponent {
     ];
 
 
-    public rows:Array<any> = [
-        {'name':'Sankar','position': 'Lead Developer','office':'UHG','ext':'67890','startDate':'28-DEC-2016','salary':'120,000'},
-        {'name':'Soumya','position': 'Developer','office':'Target','ext':'61223','startDate':'15-JAN-2017','salary':'90,000'}
+    public rows: Array<any> = [
+        {
+            'name': 'Sankar',
+            'position': 'Lead Developer',
+            'office': 'UHG',
+            'ext': '67890',
+            'startDate': '28-DEC-2016',
+            'salary': '120,000'
+        },
+        {
+            'name': 'Soumya',
+            'position': 'Developer',
+            'office': 'Target',
+            'ext': '61223',
+            'startDate': '15-JAN-2017',
+            'salary': '90,000'
+        }
     ];
 
-    public page:number = 1;
-    public itemsPerPage:number = 10;
-    public maxSize:number = 5;
-    public numPages:number = 1;
-    public length:number = 0;
+    public page: number = 1;
+    public itemsPerPage: number = 10;
+    public maxSize: number = 5;
+    public numPages: number = 1;
+    public length: number = 0;
 
     constructor() {
         this.products = ["paste", "brush"];
@@ -52,19 +66,8 @@ export class HomeComponent {
     }
 
 
-    public onChangeTable(config:any, page:any = {page: this.page, itemsPerPage: this.itemsPerPage}):any {
-        if (config.filtering) {
-            Object.assign(this.config.filtering, config.filtering);
-        }
-
-        if (config.sorting) {
-            Object.assign(this.config.sorting, config.sorting);
-        }
-
-        let filteredData = this.changeFilter(this.data, this.config);
-        let sortedData = this.changeSort(filteredData, this.config);
-        this.rows = page && config.paging ? this.changePage(page, sortedData) : sortedData;
-        this.length = sortedData.length;
-    }
+    public onChangeTable(config: any, page: any = {page: this.page, itemsPerPage: this.itemsPerPage}): any {
 
     }
+
+}

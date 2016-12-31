@@ -1,13 +1,13 @@
 import {Routes, RouterModule} from "@angular/router";
 import {ModuleWithProviders} from "@angular/core";
 import {HomeComponent} from "./home/home.component";
-import {BatchMonitorComponent} from "./batchMonitoring/batch.monitoring";
-import {WorkFlowComponent} from "./workflow/workflow";
 import {DellComponent} from "./dellModule/dell.component";
+import {BatchMonitorComponent} from "./batchMonitoring/batch-monitor.component";
+import {WorkFlowComponent} from "./workflow/work-flow.component";
+
 
 
 // Route configurations
-
 export const routes: Routes = [
 
     {path: "", redirectTo: "/home", pathMatch: "full"},

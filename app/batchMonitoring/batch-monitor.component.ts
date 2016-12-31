@@ -1,10 +1,10 @@
 import {Component, OnInit} from "@angular/core";
-import {LoginService} from "../service/login.service";
+import {RestApiService} from "../service/rest-api.service";
 import {Observable, Scheduler} from "rxjs/Rx";
 
 @Component({
     selector: "product-list",
-    templateUrl: "./app/batchMonitoring/batch.monitoring.html"
+    templateUrl: "batch-monitor.html"
 })
 
 export class BatchMonitorComponent implements OnInit {
@@ -17,7 +17,7 @@ export class BatchMonitorComponent implements OnInit {
 
     result: any;
 
-    constructor(private loginService: LoginService) {
+    constructor(private loginService: RestApiService) {
     }
 
     runMethod() {

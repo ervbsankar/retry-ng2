@@ -2,7 +2,7 @@ import {Pipe, PipeTransform} from "@angular/core";
 
 @Pipe({name: "jobStatusTransform"})
 
-export class JobStatusPipe implements PipeTransform {
+export class ShortStatusPipe implements PipeTransform {
 
     transform(value: string, args: String): any {
         if(!value) return value;

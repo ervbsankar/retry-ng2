@@ -1,13 +1,13 @@
 import {Component, Input, OnInit} from "@angular/core";
 import {DatePipe} from "@angular/common";
-import {LoginService} from "../service/login.service";
+import {RestApiService} from "../service/rest-api.service";
 @Component({
     selector: "mmis-notices",
-    templateUrl: "./app/batchMonitoring/mmis.notices.html",
-    styleUrls: ["./app/batchMonitoring/batch.monitoring.css"]
+    templateUrl: "./app/batchMonitoring/func-area.html",
+    styleUrls: ["batch-monitor.css"]
 })
 
-export class MassComponent implements OnInit {
+export class FuncAreaComponent implements OnInit {
     ngOnInit(): void {
         localStorage.setItem("funcArea",this.funcArea);
         this.jobList = this.loginService.getJobList(this.funcArea);
@@ -23,7 +23,7 @@ export class MassComponent implements OnInit {
     private jobList=[];
 
 
-    constructor(private loginService: LoginService){
+    constructor(private loginService: RestApiService){
         this.date = new DatePipe('en-US').transform(new Date,'dd-MMM-yy');
     }
 

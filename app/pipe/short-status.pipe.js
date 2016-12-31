@@ -9,7 +9,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 const core_1 = require("@angular/core");
-let JobStatusPipe = class JobStatusPipe {
+let ShortStatusPipe = class ShortStatusPipe {
     transform(value, args) {
         if (!value)
             return value;
@@ -21,10 +21,18 @@ let JobStatusPipe = class JobStatusPipe {
         return str;
     }
 };
+<<<<<<< HEAD:app/pipe/jobstatus.pipe.js
 JobStatusPipe = __decorate([
     core_1.Pipe({ name: "jobStatusTransform" }),
     __metadata("design:paramtypes", [])
 ], JobStatusPipe);
 exports.JobStatusPipe = JobStatusPipe;
+=======
+ShortStatusPipe = __decorate([
+    core_1.Pipe({ name: "jobStatusTransform" }), 
+    __metadata('design:paramtypes', [])
+], ShortStatusPipe);
+exports.ShortStatusPipe = ShortStatusPipe;
+>>>>>>> origin/master:app/pipe/short-status.pipe.js
 
-//# sourceMappingURL=jobstatus.pipe.js.map
+//# sourceMappingURL=short-status.pipe.js.map
