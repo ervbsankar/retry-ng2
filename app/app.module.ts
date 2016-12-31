@@ -1,7 +1,7 @@
 import {NgModule} from "@angular/core";
 import {BrowserModule} from "@angular/platform-browser";
 import {AppComponent} from "./app.component";
-import {HomeComponent} from "./home/app.home.component";
+import {HomeComponent} from "./home/home.component";
 import {
     ButtonsModule, AlertModule, Ng2BootstrapModule,
     TooltipModule, DropdownConfig
@@ -15,11 +15,13 @@ import {JobStatusPipe} from "./pipe/jobstatus.pipe";
 import {WorkFlowComponent} from "./workflow/workflow";
 import {FirstDirective} from "./directive/first.directive";
 import {DellModule} from "./dellModule/dell.module";
+import {SmartTableDirective} from "./directive/smart.table.directive";
+import {SmartTableModule} from "./smartTableModule/smart-table.module";
 
 
 @NgModule({
-    imports : [ BrowserModule, Ng2BootstrapModule, ButtonsModule, AlertModule, routing, HttpModule, TooltipModule, DellModule ],
-    declarations: [ AppComponent, HomeComponent, BatchMonitorComponent, MassComponent, JobStatusPipe, WorkFlowComponent, FirstDirective ],
+    imports : [ BrowserModule, Ng2BootstrapModule, ButtonsModule, AlertModule, routing, HttpModule, TooltipModule, DellModule,SmartTableModule],
+    declarations: [ AppComponent, HomeComponent, BatchMonitorComponent, MassComponent, JobStatusPipe, WorkFlowComponent, FirstDirective, SmartTableDirective ],
     bootstrap : [AppComponent],
     providers: [LoginService,DropdownConfig]
 })

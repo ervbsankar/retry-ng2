@@ -23,7 +23,7 @@
             '@angular/router': 'lib/@angular/router/bundles/router.umd.js',
             '@angular/forms': 'lib/@angular/forms/bundles/forms.umd.js',
             '@angular/material': 'lib/@angular/material/bundles/material.umd.js',
-            // other libraries
+             // other libraries
             'rxjs':                       'lib/rxjs',
             'angular2-in-memory-web-api': 'lib/angular2-in-memory-web-api',
             'moment': 'lib/moment/moment.js',

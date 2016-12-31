@@ -35,6 +35,7 @@ gulp.task("libs", function() {
         "rxjs/**/*.js",
         "zone.js/dist/**",
         "@angular/**/bundles/**",
+        "@angular/material/core/theming/**",
         "ng2-bootstrap/**",
         "bootstrap/dist/**",
         "moment/moment.js",

@@ -17,8 +17,6 @@ export class FirstDirective implements OnInit{
     out: EventEmitter<any>;
 
     ngOnInit(){
-        console.log(this.store);
-        console.log(this.out);
         this.out.emit({'Sankar': 'Rock'});
     }
 

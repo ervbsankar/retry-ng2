@@ -1,7 +1,8 @@
 import {Component} from "@angular/core";
 @Component({
     selector: "dell-trans",
-    templateUrl: "./app/dellModule/dell.component.html"
+    templateUrl: "./app/dellModule/dell.component.html",
+    styleUrls: ["./app/dellModule/dell.component.css"]
 })
 export class DellComponent{
 
