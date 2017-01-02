@@ -1,6 +1,7 @@
 {
-  "name": "NodeProject",
-  "version": "0.0.0",
+  "name": "Retry",
+  "version": "0.1.0",
+  "description":"This project is Angular2",
   "private": true,
   "scripts": {
     "start": "concurrent --kill-others \"gulp watch\" \"lite-server\"",

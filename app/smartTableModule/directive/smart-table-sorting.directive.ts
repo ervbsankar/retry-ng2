@@ -23,10 +23,8 @@ export class SmartTableSortingDirective {
         if(event){
             event.preventDefault();
         }
-        console.log(this.column);
 
         if(this.ngTableSorting && this.column && this.column.sort !== false){
-            console.log(this.column);
             switch(this.column.sort){
                 case 'asc':
                     this.column.sort = 'desc';

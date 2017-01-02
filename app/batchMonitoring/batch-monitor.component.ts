@@ -4,7 +4,7 @@ import {Observable, Scheduler} from "rxjs/Rx";
 
 @Component({
     selector: "product-list",
-    templateUrl: "batch-monitor.html"
+    templateUrl: "./app/batchMonitoring/batch-monitor.html"
 })
 
 export class BatchMonitorComponent implements OnInit {

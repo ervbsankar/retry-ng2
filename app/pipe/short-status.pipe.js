@@ -21,18 +21,10 @@ let ShortStatusPipe = class ShortStatusPipe {
         return str;
     }
 };
-<<<<<<< HEAD:app/pipe/jobstatus.pipe.js
-JobStatusPipe = __decorate([
+ShortStatusPipe = __decorate([
     core_1.Pipe({ name: "jobStatusTransform" }),
     __metadata("design:paramtypes", [])
-], JobStatusPipe);
-exports.JobStatusPipe = JobStatusPipe;
-=======
-ShortStatusPipe = __decorate([
-    core_1.Pipe({ name: "jobStatusTransform" }), 
-    __metadata('design:paramtypes', [])
 ], ShortStatusPipe);
 exports.ShortStatusPipe = ShortStatusPipe;
->>>>>>> origin/master:app/pipe/short-status.pipe.js
 
 //# sourceMappingURL=short-status.pipe.js.map

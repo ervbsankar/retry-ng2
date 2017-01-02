@@ -16,11 +16,12 @@ import {HomeComponent} from "./home/home.component";
 import {WorkFlowComponent} from "./workflow/work-flow.component";
 import {RestApiService} from "./service/rest-api.service";
 import {ShortStatusPipe} from "./pipe/short-status.pipe";
+import {FuncAreaComponent} from "./batchMonitoring/func-area.component";
 
 
 @NgModule({
     imports: [BrowserModule, Ng2BootstrapModule, ButtonsModule, AlertModule, routing, HttpModule, TooltipModule, DellModule, SmartTableModule],
-    declarations: [AppComponent, HomeComponent, BatchMonitorComponent, ShortStatusPipe, WorkFlowComponent, FirstDirective, SmartTableDirective],
+    declarations: [AppComponent, HomeComponent, BatchMonitorComponent, FuncAreaComponent, ShortStatusPipe, WorkFlowComponent, FirstDirective, SmartTableDirective],
     bootstrap: [AppComponent],
     providers: [RestApiService, DropdownConfig]
 })
