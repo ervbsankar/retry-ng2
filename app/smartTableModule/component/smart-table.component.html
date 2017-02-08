@@ -11,16 +11,16 @@
     </tr>
     </thead>
     <tbody>
-    <!--<tr *ngIf="showFilterRow">
+    <tr *ngIf="config.filter">
         <td *ngFor="let column of columns">
             <input *ngIf="column.filtering" placeholder="{{column.filtering.placeholder}}"
                    [ngTableFiltering]="column.filtering"
                    class="form-control"
                    style="width: auto;"
-                   (tableChanged)="onChangeTable(config)"/>
+                   (tableChanged)="onFilterChange($event,column)"/>
         </td>
-    </tr>-->
-    <tr *ngFor="let row of rows">
+    </tr>
+    <tr *ngFor="let row of _rows">
         <td (click)="cellClick(row, column.name)" *ngFor="let column of columns" [innerHtml]="sanitize(getData(row, column.name))"></td>
     </tr>
     </tbody>

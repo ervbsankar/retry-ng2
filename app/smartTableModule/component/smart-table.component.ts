@@ -12,11 +12,14 @@ export class SmartTableComponent implements OnInit {
     public columns: Array<any> = [];
     public rows: Array<any> = [];
 
+    public _rows: Array<any> = [];
+
     public tableChanged:EventEmitter<any> = new EventEmitter();
     public cellClicked:EventEmitter<any> = new EventEmitter();
 
     public config: any = {
         paging: true,
+        filter: true,
         sorting: {columns: this.columns},
         filtering: {filterString: ''},
         className: ['table-striped', 'table-bordered']
@@ -26,6 +29,7 @@ export class SmartTableComponent implements OnInit {
     }
 
     public ngOnInit(): void {
+        this._rows = this.rows;
     }
 
     public sanitize(html: string): SafeHtml {
@@ -53,6 +57,19 @@ export class SmartTableComponent implements OnInit {
 
     public cellClick(row:any, column:any):void {
         this.cellClicked.emit({row, column});
+    }
+
+    public onFilterChange(config: any, column: any) {
+        this._rows = this.rows;
+
+        this.columns.forEach(col => {
+            if(col.filtering){
+                if(col.filtering.filterString)
+                this._rows = this.rows.filter((row: any) => {
+                    return row[col.name].toLowerCase().indexOf(col.filtering.filterString.toLowerCase()) >= 0;
+                });
+            }
+        });
     }
 
     public changeSort() : any{

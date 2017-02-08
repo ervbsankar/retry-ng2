@@ -61,8 +61,8 @@ export class HomeComponent {
     }
 
 // page: any = {page: this.page, itemsPerPage: this.itemsPerPage}
-    public onChangeTable(config: any): any {
-        //console.log(config);
+    public onChangeTable(columns: any): any {
+        //console.log(columns);
     }
 
 }
