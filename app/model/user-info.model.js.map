@@ -1,1 +1,1 @@
-{"version":3,"sources":["model/user-info.model.ts"],"names":[],"mappings":";AACA;AAKA,CAAC;AALY,gBAAQ,WAKpB,CAAA","file":"model/user-info.model.js","sourcesContent":["\nexport class userInfo {\n    userName: String;\n    osName: String;\n    role: String;\n\n}"],"sourceRoot":"/source/"}
+{"version":3,"sources":["model/user-info.model.ts"],"names":[],"mappings":";AACA;CAKC;AALD,4BAKC","file":"user-info.model.js","sourcesContent":["\r\nexport class userInfo {\r\n    userName: String;\r\n    osName: String;\r\n    role: String;\r\n\r\n}"]}

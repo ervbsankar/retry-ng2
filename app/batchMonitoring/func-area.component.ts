@@ -4,7 +4,7 @@ import {RestApiService} from "../service/rest-api.service";
 @Component({
     selector: "mmis-notices",
     templateUrl: "./app/batchMonitoring/func-area.html",
-    styleUrls: ["batch-monitor.css"]
+    styleUrls: ["./app/batchMonitoring/batch-monitor.css"]
 })
 
 export class FuncAreaComponent implements OnInit {
