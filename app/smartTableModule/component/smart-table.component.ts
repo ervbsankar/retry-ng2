@@ -1,8 +1,9 @@
-import {Component, OnInit, EventEmitter, Output} from "@angular/core";
+import {Component, OnInit, EventEmitter} from "@angular/core";
 import {SafeHtml, DomSanitizer} from "@angular/platform-browser";
 @Component({
     selector: "smart-table",
     inputs: ["columns","rows"],
+    outputs: ["tableChanged","cellClicked"],
     templateUrl: "./app/smartTableModule/component/smart-table.component.html"
 })
 
@@ -11,9 +12,8 @@ export class SmartTableComponent implements OnInit {
     public columns: Array<any> = [];
     public rows: Array<any> = [];
 
-    private _columns:Array<any> = [];
-    @Output() public tableChanged:EventEmitter<any> = new EventEmitter();
-    @Output() public cellClicked:EventEmitter<any> = new EventEmitter();
+    public tableChanged:EventEmitter<any> = new EventEmitter();
+    public cellClicked:EventEmitter<any> = new EventEmitter();
 
     public config: any = {
         paging: true,
@@ -39,27 +39,43 @@ export class SmartTableComponent implements OnInit {
     }
 
     public onChangeTable(column:any):void {
-        this._columns.forEach((col:any) => {
+        this.columns.forEach((col:any) => {
             if (col.name !== column.name && col.sort !== false) {
                 col.sort = '';
             }
         });
-        this.tableChanged.emit({sorting: this.configColumns});
+
+        let sortedData = this.changeSort();
+        this.rows = sortedData;
+       this.tableChanged.emit(this.columns);
     }
 
-    public get configColumns():any {
-        let sortColumns:Array<any> = [];
-
-        this.columns.forEach((column:any) => {
-            if (column.sort) {
-                sortColumns.push(column);
-            }
-        });
-        return {columns: sortColumns};
-    }
 
     public cellClick(row:any, column:any):void {
         this.cellClicked.emit({row, column});
     }
 
+    public changeSort() : any{
+
+        let sort:string = void 0;
+        let columnName:string = void 0;
+
+        this.columns.forEach((col:any) => {
+            if (col.sort !== '' && col.sort !== false) {
+                sort = col.sort;
+                columnName = col.name;
+            }
+        });
+
+        return this.rows.sort((previous: any, current: any) => {
+            if (previous[columnName] > current[columnName]) {
+                return sort === 'desc' ? -1 : 1;
+            } else if (previous[columnName] < current[columnName]) {
+                return sort === 'asc' ? -1 : 1;
+            }
+            return 0;
+        })
+
     }
+
+}

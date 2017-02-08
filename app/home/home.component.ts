@@ -13,12 +13,7 @@ export class HomeComponent {
     public childData: any;
     public columns: Array<any> = [
         {title: 'Name', name: 'name', filtering: {filterString: '', placeholder: 'Filter by name'}},
-        {
-            title: 'Position',
-            name: 'position',
-            sort: false,
-            filtering: {filterString: '', placeholder: 'Filter by position'}
-        },
+        {title: 'Position', name: 'position', sort: false, filtering: {filterString: '', placeholder: 'Filter by position'}},
         {title: 'Office', className: ['text-success'], name: 'office', sort: 'asc'},
         {title: 'Extn.', name: 'ext', sort: '', filtering: {filterString: '', placeholder: 'Filter by extn.'}},
         {title: 'Start date', className: 'text-warning', name: 'startDate'},
@@ -33,7 +28,7 @@ export class HomeComponent {
             'office': 'UHG',
             'ext': '67890',
             'startDate': '28-DEC-2016',
-            'salary': '120,000'
+            'salary': 120000
         },
         {
             'name': 'Soumya',
@@ -41,7 +36,7 @@ export class HomeComponent {
             'office': 'Target',
             'ext': '61223',
             'startDate': '15-JAN-2017',
-            'salary': '90,000'
+            'salary': 90000
         }
     ];
 
@@ -65,9 +60,9 @@ export class HomeComponent {
         console.log(data);
     }
 
-
-    public onChangeTable(config: any, page: any = {page: this.page, itemsPerPage: this.itemsPerPage}): any {
-
+// page: any = {page: this.page, itemsPerPage: this.itemsPerPage}
+    public onChangeTable(config: any): any {
+        //console.log(config);
     }
 
 }
