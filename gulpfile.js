@@ -3,8 +3,8 @@ var ts = require("typescript");
 var gts = require("gulp-typescript");
 var del = require("del");
 var tsProject = gts.createProject("./tsconfig.json");
-var tslint = require("gulp-tslint");
-var sourcemaps = require("gulp-sourcemaps");
+var tsLint = require("gulp-tsLint");
+var sourceMaps = require("gulp-sourcemaps");
 
 gulp.task("clean", function(){
     del("build");
@@ -12,18 +12,18 @@ gulp.task("clean", function(){
 
 gulp.task("compile",function(){
    return gulp.src(["app/**/*.ts","!**/*.spec.ts"])
-       .pipe(sourcemaps.init())
+       .pipe(sourceMaps.init())
        .pipe(tsProject())
-       .pipe(sourcemaps.write("."))
+       .pipe(sourceMaps.write("."))
        .pipe(gulp.dest("app"));
 });
 
-gulp.task("tslint", function() {
+gulp.task("tsLint", function() {
     return gulp.src("app/**/*.ts")
-        .pipe(tslint({
+        .pipe(tsLint({
             formatter: "prose"
         }))
-        .pipe(tslint.report());
+        .pipe(tsLint.report());
 });
 
 gulp.task("libs", function() {
