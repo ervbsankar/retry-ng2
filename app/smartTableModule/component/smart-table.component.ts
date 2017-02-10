@@ -59,7 +59,10 @@ export class SmartTableComponent implements OnInit {
         this.cellClicked.emit({row, column});
     }
 
+
     public onFilterChange(config: any, column: any) {
+        console.log(config);
+        console.log(column);
         this._rows = this.rows;
 
         this.columns.forEach(col => {

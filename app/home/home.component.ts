@@ -1,4 +1,4 @@
-import {Component} from "@angular/core";
+import {Component, OnInit} from "@angular/core";
 
 
 @Component({
@@ -6,11 +6,17 @@ import {Component} from "@angular/core";
     templateUrl: "./app/home/home.component.html"
 })
 
-export class HomeComponent {
+export class HomeComponent implements OnInit{
+
+
+    ngOnInit(): void {
+        this._columns = this.columns;
+    }
 
     date: Date = new Date();
     products: String[];
     public childData: any;
+    public _columns: Array<any> = [];
     public columns: Array<any> = [
         {title: 'Name', name: 'name', filtering: {filterString: '', placeholder: 'Filter by name'}},
         {title: 'Position', name: 'position', sort: false, filtering: {filterString: '', placeholder: 'Filter by position'}},
@@ -45,6 +51,7 @@ export class HomeComponent {
     public maxSize: number = 5;
     public numPages: number = 1;
     public length: number = 0;
+    public filteredColumns: Array<any> = this.columns;
 
     constructor() {
         this.products = ["paste", "brush"];
@@ -60,9 +67,14 @@ export class HomeComponent {
         console.log(data);
     }
 
+    // trigger from check box
+    public onCheckboxChange(col: Object){
+        this._columns = this.columns.filter(col => !col.hide);
+        console.log(this._columns);
+    }
+
 // page: any = {page: this.page, itemsPerPage: this.itemsPerPage}
     public onChangeTable(columns: any): any {
-        //console.log(columns);
     }
 
 }
