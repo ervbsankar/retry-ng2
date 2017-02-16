@@ -13,11 +13,13 @@ const common_1 = require("@angular/common");
 const smart_table_component_1 = require("./component/smart-table.component");
 const smart_table_sorting_directive_1 = require("./directive/smart-table-sorting.directive");
 const smart_table_filtering_directive_1 = require("./directive/smart-table-filtering.directive");
+const ng2_bootstrap_1 = require("ng2-bootstrap");
+const material_1 = require("@angular/material");
 let SmartTableModule = class SmartTableModule {
 };
 SmartTableModule = __decorate([
     core_1.NgModule({
-        imports: [common_1.CommonModule],
+        imports: [common_1.CommonModule, ng2_bootstrap_1.Ng2BootstrapModule, ng2_bootstrap_1.PaginationModule.forRoot(), material_1.MaterialModule.forRoot()],
         declarations: [smart_table_component_1.SmartTableComponent, smart_table_sorting_directive_1.SmartTableSortingDirective, smart_table_filtering_directive_1.NgTableFilteringDirective],
         exports: [smart_table_component_1.SmartTableComponent, smart_table_sorting_directive_1.SmartTableSortingDirective, smart_table_filtering_directive_1.NgTableFilteringDirective]
     }),

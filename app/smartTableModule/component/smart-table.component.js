@@ -50,13 +50,11 @@ let SmartTableComponent = class SmartTableComponent {
         this.cellClicked.emit({ row, column });
     }
     onFilterChange(config, column) {
-        console.log(config);
-        console.log(column);
         this._rows = this.rows;
         this.columns.forEach(col => {
             if (col.filtering) {
                 if (col.filtering.filterString)
-                    this._rows = this.rows.filter((row) => {
+                    this._rows = this._rows.filter((row) => {
                         return row[col.name].toLowerCase().indexOf(col.filtering.filterString.toLowerCase()) >= 0;
                     });
             }

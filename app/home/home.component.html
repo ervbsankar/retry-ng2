@@ -1,8 +1,7 @@
-
 <div class="row">
     <div class="col-md-4">
         <div class="btn-group" dropdown>
-            <button id="single-button" type="button" class="btn btn-primary" dropdownToggle [disabled]="disabled">
+            <button id="single-button" type="button" class="btn btn-info" dropdownToggle [disabled]="disabled">
                 Hide Columns <span class="caret"></span>
             </button>
             <ul dropdownMenu role="menu" aria-labelledby="single-button">
@@ -12,5 +11,29 @@
             </ul>
         </div>
     </div>
+    <div class="col-md-4">
+    </div>
+    <div class="col-md-4">
+        <md-input-container>
+            <input md-input placeholder="Items/Page" [(ngModel)]="itemsPerPage" style="width: 100px">
+        </md-input-container>
+    </div>
 </div>
-<smart-table [columns]="_columns" [rows]="rows" (tableChanged)="onChangeTable($event)" (cellClicked)="onCellClick($event)" ></smart-table>
+
+<div class="margin-border">
+    <smart-table [columns]="_columns" [rows]="rows" (tableChanged)="onChangeTable($event)"
+                 (cellClicked)="onCellClick($event)"></smart-table>
+
+    <pagination *ngIf="true"
+                class="pagination-sm"
+                [(ngModel)]="page"
+                [totalItems]="length"
+                [itemsPerPage]="itemsPerPage"
+                [maxSize]="maxSize"
+                [boundaryLinks]="true"
+                [rotate]="false"
+                (pageChanged)="onChangeTable(config, $event)"
+                (numPages)="numPages = $event">
+    </pagination>
+    <pre *ngIf="true" class="card card-block card-header">Page: {{page}} / {{numPages}}</pre>
+</div>

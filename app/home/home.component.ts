@@ -3,7 +3,8 @@ import {Component, OnInit} from "@angular/core";
 
 @Component({
     selector: "home",
-    templateUrl: "./app/home/home.component.html"
+    templateUrl: "./app/home/home.component.html",
+    styleUrls: ["./app/home/home.component.css"]
 })
 
 export class HomeComponent implements OnInit{
@@ -17,6 +18,8 @@ export class HomeComponent implements OnInit{
     products: String[];
     public childData: any;
     public _columns: Array<any> = [];
+    public _rows: Array<any> = [];
+
     public columns: Array<any> = [
         {title: 'Name', name: 'name', filtering: {filterString: '', placeholder: 'Filter by name'}},
         {title: 'Position', name: 'position', sort: false, filtering: {filterString: '', placeholder: 'Filter by position'}},
@@ -47,34 +50,30 @@ export class HomeComponent implements OnInit{
     ];
 
     public page: number = 1;
-    public itemsPerPage: number = 10;
+    public itemsPerPage: number = 1;
     public maxSize: number = 5;
     public numPages: number = 1;
-    public length: number = 0;
+    public length: number = 2;
     public filteredColumns: Array<any> = this.columns;
 
     constructor() {
         this.products = ["paste", "brush"];
     }
 
-    onOut(e) {
-        console.log('Emitting event');
-        console.log(e);
-        this.childData = e.Sankar;
-    }
-
+    //trigger event emitter from Smart table
     public onCellClick(data: any): any {
         console.log(data);
     }
 
-    // trigger from check box
+    // trigger from checkbox change in HTML
     public onCheckboxChange(col: Object){
         this._columns = this.columns.filter(col => !col.hide);
-        console.log(this._columns);
     }
 
 // page: any = {page: this.page, itemsPerPage: this.itemsPerPage}
-    public onChangeTable(columns: any): any {
+    public onChangeTable(columns: any, page: any = {page: this.page, itemsPerPage: this.itemsPerPage}): any {
+        console.log(columns);
+        console.log(log);
     }
 
 }

@@ -13,6 +13,7 @@ let HomeComponent = class HomeComponent {
     constructor() {
         this.date = new Date();
         this._columns = [];
+        this._rows = [];
         this.columns = [
             { title: 'Name', name: 'name', filtering: { filterString: '', placeholder: 'Filter by name' } },
             { title: 'Position', name: 'position', sort: false, filtering: { filterString: '', placeholder: 'Filter by position' } },
@@ -40,37 +41,35 @@ let HomeComponent = class HomeComponent {
             }
         ];
         this.page = 1;
-        this.itemsPerPage = 10;
+        this.itemsPerPage = 1;
         this.maxSize = 5;
         this.numPages = 1;
-        this.length = 0;
+        this.length = 2;
         this.filteredColumns = this.columns;
         this.products = ["paste", "brush"];
     }
     ngOnInit() {
         this._columns = this.columns;
     }
-    onOut(e) {
-        console.log('Emitting event');
-        console.log(e);
-        this.childData = e.Sankar;
-    }
+    //trigger event emitter from Smart table
     onCellClick(data) {
         console.log(data);
     }
-    // trigger from check box
+    // trigger from checkbox change in HTML
     onCheckboxChange(col) {
         this._columns = this.columns.filter(col => !col.hide);
-        console.log(this._columns);
     }
     // page: any = {page: this.page, itemsPerPage: this.itemsPerPage}
-    onChangeTable(columns) {
+    onChangeTable(columns, page = { page: this.page, itemsPerPage: this.itemsPerPage }) {
+        console.log(columns);
+        console.log(log);
     }
 };
 HomeComponent = __decorate([
     core_1.Component({
         selector: "home",
-        templateUrl: "./app/home/home.component.html"
+        templateUrl: "./app/home/home.component.html",
+        styleUrls: ["./app/home/home.component.css"]
     }),
     __metadata("design:paramtypes", [])
 ], HomeComponent);

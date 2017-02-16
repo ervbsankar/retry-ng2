@@ -1,0 +1,22 @@
+.row {
+    margin-left: 10px;
+}
+
+.margin-border {
+    margin-left: 20px;
+    margin-right: 20px;
+    border-top: 1px solid #ddd;
+}
+
+
+.office-header {
+    background-color: yellow;
+}
+
+.md-input-placeholder {
+    color: black;
+}
+
+.md-input-underline {
+    width: 100px;
+}
